@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BoardList</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID: </th>
+                <th>내용</th>
+                <th>날짜</th>
+                <th>좋아요</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="boardDao:${boardDaos}">
+                <td th:text="${boardDao.getId()}"></td>
+                <td th:text="${boardDao.getContext()}"></td>
+                <td th:text="${boardDao.getIssued()}"></td>
+                <td th:text="${boardDao.getLikes()}"></td>
+        </tbody>
+    </table>
+</body>
+</html>
